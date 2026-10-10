@@ -17,5 +17,13 @@ pipeline {
         sh 'node --version'
       }
     }
+    stage('Java') {
+      agent {
+        docker { image 'openjdk:17-jdk' }
+      }
+      steps {
+        sh 'java --version'
+      }
+    }
   }
 }
